@@ -8,14 +8,13 @@ var Tree = function(value) {
 
 var treeMethods = {};
 
-// Time complexity: 
+// Time complexity: O(1)
 treeMethods.addChild = function(value) {
   this.children.push(Tree(value));
 };
 
-// Time complexity: 
+// Time complexity: O(n)
 treeMethods.contains = function(target) {
-
   if (this.value === target) {
     return true;
   } else {
