@@ -12,6 +12,7 @@ var BinarySearchTree = function(value) {
 
 var bstMethods = {};
 
+// Time Complexity: average case O(log n), worst case O(n)
 // accepts a value and places in the tree in the correct position
 bstMethods.insert = function (value) {
   // checking left
@@ -32,6 +33,7 @@ bstMethods.insert = function (value) {
   }  
 };
 
+// Time Complexity: average case O(log n), worst case O(n)
 // accepts a value and returns a boolean reflecting whether or not the value is contained in the tree
 bstMethods.contains = function(target) {
   // check if target is found
@@ -52,15 +54,37 @@ bstMethods.contains = function(target) {
   }
 };
 
+// Time Complexity: O(n)
 // accepts a callback and executes it on every value contained in the tree
 bstMethods.depthFirstLog = function(callback) {
-
+  callback(this.value);
+  if (this.right !== undefined) {
+    this.right.depthFirstLog(callback);
+  } else if (this.left !== undefined) {
+    this.left.depthFirstLog(callback);
+  }
 };
 
-/*
+/* 
  * Complexity: What is the time complexity of the above functions?
  */
 
 
 // var binarySearchTree = BinarySearchTree();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
