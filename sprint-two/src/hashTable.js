@@ -7,12 +7,14 @@ var HashTable = function() {
   //return this;
 };
 
+// Time Complexity: 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
 
   this._storage.set(index, [k, v]);
 };
 
+// Time Complexity: 
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var retrieved = this._storage.get(index);
@@ -20,16 +22,16 @@ HashTable.prototype.retrieve = function(k) {
   if (retrieved === undefined) {
     return undefined;
   }
-  
+
   return retrieved[1];
 };
 
+// Time Complexity: 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   this._storage.set(index, undefined);
 
 };
-
 
 // var hashTable = new HashTable();
 /*
