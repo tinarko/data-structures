@@ -8,7 +8,11 @@ var setPrototype = {};
 
 // Time Complexity: O(1)
 setPrototype.add = function(item) {
-  this._storage[item] = item;
+  if (item === '') {
+    return;
+  } else {
+    this._storage[item] = item;
+  }
 };
 
 // Time Complexity: O(1)
