@@ -41,4 +41,9 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should only take in number values when creating children', function() {
+    tree.addChild(1);
+    expect(tree.children[0].value).to.be.a('number');
+  });
+
 });
