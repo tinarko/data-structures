@@ -15,8 +15,12 @@ var bstMethods = {};
 // Time Complexity: average case O(log n), worst case O(n)
 // accepts a value and places in the tree in the correct position
 bstMethods.insert = function (value) {
+
+  if (this.value === value) {
+    return;
+  }
   // checking left
-  if (this.value >= value) {
+  if (this.value > value) {
     if (this.left === undefined) {
       this.left = BinarySearchTree(value);
     } else {
